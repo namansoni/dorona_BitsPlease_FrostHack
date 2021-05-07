@@ -1,6 +1,7 @@
 import 'package:dorona_frost/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../colors1.dart';
@@ -82,6 +83,11 @@ class _RemindersState extends State<Reminders> {
               ),
             ),
           ),
+          // Row(
+          //   children: [
+          //     SvgPicture.asset('assets/images/bottle-water-plastic.svg')
+          //   ],
+          // ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
             child: Text(
