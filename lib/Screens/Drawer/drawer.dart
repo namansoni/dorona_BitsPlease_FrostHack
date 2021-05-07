@@ -93,21 +93,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                   style: simpleTextDrawer,
                 ),
               ),
-              // ListTile(
-              //   leading: Icon(
-              //     MyCustomIcons.heartbeat,
-              //     size: 30,
-              //     color: iconColor,
-              //   ),
-              //   title: Text(
-              //     "Test yourself",
-              //     style: simpleTextDrawer,
-              //   ),
-              //   onTap: () {
-              //     Navigator.of(context).push(
-              //         MaterialPageRoute(builder: (context) => XRayTestHome()));
-              //   },
-              // ),
+            
               ListTile(
                 leading: Icon(
                   MyCustomIcons.cog_outline,
@@ -171,17 +157,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                   style: simpleTextDrawer,
                 ),
               ),
-              // ListTile(
-              //   title: Text(
-              //     "Personal Assistant",
-              //     style: simpleTextDrawer,
-              //   ),
-              //   onTap: () {
-              //     Navigator.of(context).push(MaterialPageRoute(
-              //       builder: (context) => HomePageDialogflow(),
-              //     ));
-              //   },
-              // )
+            
             ],
           ),
         ),
