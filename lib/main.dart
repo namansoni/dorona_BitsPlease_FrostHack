@@ -38,6 +38,7 @@ class _MyAppState extends State<MyApp> {
 
     super.initState();
   }
+  
 
   @override
   Widget build(BuildContext context) {
@@ -84,6 +85,7 @@ class _OnBoardingState extends State<OnBoarding> {
   bool isRegistered = false;
   @override
   void initState() {
+    getPermissions();
   }
 
   @override
@@ -98,6 +100,7 @@ class _OnBoardingState extends State<OnBoarding> {
   }
 
   void getPermissions() async {
+    //location
     await requestPermission();
   }
 
