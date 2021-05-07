@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "418766223120",
+    "project_id": "doronafrost",
+    "storage_bucket": "doronafrost.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:418766223120:android:e772f7a6320fd3352e5795",
+        "android_client_info": {
+          "package_name": "com.example.dorona_frost"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "418766223120-1912nmkbt255t69mo3ed4qcls8s03kic.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.dorona_frost",
+            "certificate_hash": "3b71e62527b0f64bdeda45407f0a039ac96ab8d7"
+          }
+        },
+        {
+          "client_id": "418766223120-lr94r4952q5gso49btnhb5u3f7qp7rqj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVOBaWXjdVFJKE7-A2cCld0UyfoRwvEIE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "418766223120-lr94r4952q5gso49btnhb5u3f7qp7rqj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
