@@ -59,6 +59,7 @@ dependencies:
   image: ^2.1.19
   dio:
   connectivity:
+  flutter_staggered_animations:
   percent_indicator:
 
 dev_dependencies:
