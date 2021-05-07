@@ -49,11 +49,15 @@ class _HomeState extends State<Home> {
         }).then((value) => print("updated"));
       }
     });
-
+    callChannels();
     createAndroidNotificationToken();
     super.initState();
   }
+  void callChannels() async {
+    MethodChannel channel = MethodChannel("Location");
+    await channel.invokeMethod('startLocation', {'userId': widget.user.uid});
 
+  }
   @override
   Widget build(BuildContext context) {
     final userProvider = Provider.of<UserProvider>(context);
