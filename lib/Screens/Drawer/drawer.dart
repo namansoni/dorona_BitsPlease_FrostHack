@@ -1,16 +1,11 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
-// import 'package:dorona/Screens/QrScanner/showQr.dart';
-// import 'package:dorona/Screens/ReportPDFViewer/show_report.dart';
-// import 'package:dorona/Screens/Surverys/chatBot.dart';
-// import 'package:dorona/Screens/xRayTest/xRayTestHome.dart';
-// import 'package:dorona/colors1.dart';
-// import 'package:dorona/my_custom_icons.dart';
+import 'package:dorona_frost/Screens/xRayTest/xRayTestHome.dart';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-//import 'package:dorona/styles.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:url_launcher/url_launcher.dart';
-//import 'package:dorona/Screens/Drawer/chatbot.dart';
 
 import '../../colors1.dart';
 import '../../my_custom_icons.dart';
@@ -42,40 +37,22 @@ class _CustomDrawerState extends State<CustomDrawer> {
               Divider(
                 color: iconColor,
               ),
-              // ListTile(
-              //   onTap: () {
-              //     Navigator.of(context).pop();
-              //     Navigator.of(context).push(MaterialPageRoute(
-              //       builder: (context) => ShowQr(),
-              //     ));
-              //   },
-              //   leading: Icon(
-              //     MyCustomIcons.qrcode,
-              //     size: 30,
-              //     color: iconColor,
-              //   ),
-              //   title: Text(
-              //     "Generate/Scan QR code",
-              //     style: simpleTextDrawer,
-              //   ),
-              // ),
-              // ListTile(
-              //   onTap: () {
-              //     Navigator.of(context).pop();
-              //     Navigator.of(context).push(MaterialPageRoute(
-              //       builder: (context) => ShowReport(),
-              //     ));
-              //   },
-              //   leading: Icon(
-              //     MyCustomIcons.stethoscope,
-              //     size: 30,
-              //     color: iconColor,
-              //   ),
-              //   title: Text(
-              //     "See Your Report",
-              //     style: simpleTextDrawer,
-              //   ),
-              // ),
+             
+              ListTile(
+                leading: Icon(
+                  MyCustomIcons.heartbeat,
+                  size: 30,
+                  color: iconColor,
+                ),
+                title: Text(
+                  "Test yourself",
+                  style: simpleTextDrawer,
+                ),
+                onTap: () {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => XRayTestHome()));
+                },
+              ),
               ListTile(
                 onTap: () async {
                   if (await canLaunch("tel:1075")) {
