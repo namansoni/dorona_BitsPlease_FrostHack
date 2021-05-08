@@ -1,3 +1,4 @@
+import 'package:dorona_frost/Screens/Reminders/set_reminder.dart';
 import 'package:dorona_frost/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
@@ -127,6 +128,7 @@ class _RemindersState extends State<Reminders> {
                     ),
                     border: Border.all(color: blueColor)),
                 child: ListView.builder(
+                    physics: NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
                     itemCount: nutrition.length,
                     itemBuilder: (context, index) {
@@ -192,6 +194,7 @@ class _RemindersState extends State<Reminders> {
                     ),
                     border: Border.all(color: blueColor)),
                 child: ListView.builder(
+                    physics: NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
                     itemCount: does.length,
                     itemBuilder: (context, index) {
@@ -231,17 +234,21 @@ class _RemindersState extends State<Reminders> {
                         fontSize: 13,
                       ),
                     )),
-                    GestureDetector(
-                      onTap: () {
-                      },
-                      child: Container(
-                        height: 100,
-                        width: 100,
-                        decoration: BoxDecoration(
-                            color: Colors.green, shape: BoxShape.circle),
-                        child: Icon(
-                          Icons.table_view,
-                          color: Colors.white,
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 8.0),
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.push(context,MaterialPageRoute(builder:(context)=>SetReminder()));
+                        },
+                        child: Container(
+                          height: 100,
+                          width: 100,
+                          decoration: BoxDecoration(
+                              color: Colors.green.withOpacity(1), shape: BoxShape.circle),
+                          child: Icon(
+                            Icons.table_view,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                     ),
