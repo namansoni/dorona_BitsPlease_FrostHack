@@ -6,6 +6,7 @@ import 'package:dorona_frost/Providers/userProvider.dart';
 import 'package:dorona_frost/Screens/Home/covid_updates.dart';
 import 'package:dorona_frost/Screens/ShowQR/showQR.dart';
 import 'package:dorona_frost/Screens/survey.dart';
+import 'package:dorona_frost/Screens/under_construction.dart';
 import 'package:dorona_frost/styles.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
@@ -96,7 +97,7 @@ class _HomeState extends State<Home> {
       body: _selectedIndex == 0
           ? MainHome()
           : _selectedIndex == 1
-              ? CovidUpdates():Column(),
+              ? CovidUpdates():UnderConstruction(screen: 'SELF ASSESSMENT TEST',),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(color: Colors.white, boxShadow: [
           BoxShadow(blurRadius: 20, color: Colors.black.withOpacity(.1))

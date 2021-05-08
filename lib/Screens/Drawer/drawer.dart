@@ -1,5 +1,6 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:dorona_frost/Screens/Reminders/reminders_home.dart';
+import 'package:dorona_frost/Screens/under_construction.dart';
 import 'package:dorona_frost/Screens/xRayTest/xRayTestHome.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
@@ -38,7 +39,6 @@ class _CustomDrawerState extends State<CustomDrawer> {
               Divider(
                 color: iconColor,
               ),
-             
               ListTile(
                 leading: Icon(
                   MyCustomIcons.heartbeat,
@@ -71,7 +71,26 @@ class _CustomDrawerState extends State<CustomDrawer> {
                   style: simpleTextDrawer,
                 ),
               ),
-            
+              ListTile(
+                leading: Icon(
+                  MyCustomIcons.stethoscope,
+                  size: 30,
+                  color: iconColor,
+                ),
+                title: Text(
+                  "Dorona Bot",
+                  style: simpleTextDrawer,
+                ),
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => UnderConstruction(
+                        screen: 'DORONA BOT',
+                      ),
+                    ),
+                  );
+                },
+              ),
               ListTile(
                 leading: Icon(
                   MyCustomIcons.cog_outline,
@@ -101,7 +120,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                     title: "Do you really want to signout?",
                     desc: "",
                     btnOk: ElevatedButton(
-                     // color: greenColor,
+                      // color: greenColor,
                       onPressed: () {
                         Navigator.of(widget.homecontext).pop();
                         FirebaseAuth auth = FirebaseAuth.instance;
@@ -129,13 +148,15 @@ class _CustomDrawerState extends State<CustomDrawer> {
                 color: iconColor,
               ),
               ListTile(
-                onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context)=>Reminders()));},
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Reminders()));
+                },
                 title: Text(
                   "Reminders",
                   style: simpleTextDrawer,
                 ),
               ),
-            
             ],
           ),
         ),
