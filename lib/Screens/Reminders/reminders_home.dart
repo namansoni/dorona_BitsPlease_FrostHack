@@ -32,10 +32,9 @@ class _RemindersState extends State<Reminders> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: Text(
-          'REMINDERS',
-          style: titleTextStyle//TextStyle(color: blueColor),
-        ),
+        title: Text('REMINDERS',
+            style: titleTextStyle //TextStyle(color: blueColor),
+            ),
         centerTitle: true,
         leading: IconButton(
           icon: Icon(
@@ -63,31 +62,49 @@ class _RemindersState extends State<Reminders> {
             )),
           ),
           Padding(
-            padding:
-                const EdgeInsets.symmetric(vertical: 8.0, horizontal: 15),
+            padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 15),
             child: Container(
               decoration: BoxDecoration(
-                color: greenColor.withOpacity(0.1),
-                borderRadius: BorderRadius.all(Radius.circular(8),),
-                border: Border.all(color: Colors.green)
-              ),
+                  color: greenColor.withOpacity(0.1),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(8),
+                  ),
+                  border: Border.all(color: Colors.green)),
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 4,vertical: 2),
+                padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
                 child: Center(
                   child: Text(
                     'While it is crucial to mention hygiene standards like washing your hands frequently and wearing a mask,  There are also certain methods to improve your immunity which is paramount at this juncture.',
-                    style: GoogleFonts.aleo(color: Colors.green,fontSize: 12),
+                    style: GoogleFonts.aleo(color: Colors.green, fontSize: 12),
                     textAlign: TextAlign.justify,
                   ),
                 ),
               ),
             ),
           ),
-          // Row(
-          //   children: [
-          //     SvgPicture.asset('assets/images/bottle-water-plastic.svg')
-          //   ],
-          // ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 10.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                CircleAvatar(
+                  backgroundColor: Colors.white,
+                  radius: 40,
+                  child: SvgPicture.asset(
+                      'assets/images/organic-nutrition-svgrepo-com.svg'),
+                ),
+                CircleAvatar(
+                    backgroundColor: Colors.white,
+                    radius: 40,
+                    child: SvgPicture.asset('assets/images/healthy_food.svg')),
+                CircleAvatar(
+                    backgroundColor: Colors.white,
+                    radius: 40,
+                    child: SvgPicture.asset(
+                        'assets/images/medicina-dottore-archite-01.svg'))
+              ],
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
             child: Text(
@@ -103,10 +120,11 @@ class _RemindersState extends State<Reminders> {
               padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 15),
               child: Container(
                 decoration: BoxDecoration(
-                  color: blueColor.withOpacity(0.1),
-                  borderRadius: BorderRadius.all(Radius.circular(8),),
-                  border: Border.all(color: blueColor)
-                ),
+                    color: blueColor.withOpacity(0.1),
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(8),
+                    ),
+                    border: Border.all(color: blueColor)),
                 child: ListView.builder(
                     shrinkWrap: true,
                     itemCount: nutrition.length,
@@ -117,7 +135,8 @@ class _RemindersState extends State<Reminders> {
                         child: SlideAnimation(
                           horizontalOffset: 200,
                           child: Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 2,horizontal: 4),
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 2, horizontal: 4),
                             child: Text(
                               '${String.fromCharCode(0x2022)}  ${nutrition[index]}',
                               style: GoogleFonts.aleo(color: Colors.deepPurple),
@@ -127,6 +146,29 @@ class _RemindersState extends State<Reminders> {
                       );
                     }),
               )),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 10.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                CircleAvatar(
+                  backgroundColor: Colors.white,
+                  radius: 40,
+                  child: SvgPicture.asset(
+                      'assets/images/bottle-water-plastic.svg'),
+                ),
+                CircleAvatar(
+                    backgroundColor: Colors.white,
+                    radius: 40,
+                    child: SvgPicture.asset('assets/images/coconut-oil-skin-svgrepo-com.svg')),
+                CircleAvatar(
+                    backgroundColor: Colors.white,
+                    radius: 40,
+                    child: SvgPicture.asset(
+                        'assets/images/Female-Yoga-Pose-Silhouette-13.svg'))
+              ],
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
             child: Text(
@@ -139,15 +181,14 @@ class _RemindersState extends State<Reminders> {
             ),
           ),
           Padding(
-              padding:
-                  const EdgeInsets.symmetric(vertical: 8, horizontal: 15),
+              padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 15),
               child: Container(
                 decoration: BoxDecoration(
-                              color: blueColor.withOpacity(0.1),
-                borderRadius: BorderRadius.all(Radius.circular(8),),
-                border: Border.all(color: blueColor)
-
-                ),
+                    color: blueColor.withOpacity(0.1),
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(8),
+                    ),
+                    border: Border.all(color: blueColor)),
                 child: ListView.builder(
                     shrinkWrap: true,
                     itemCount: does.length,
@@ -158,7 +199,8 @@ class _RemindersState extends State<Reminders> {
                         child: SlideAnimation(
                           horizontalOffset: 200,
                           child: Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 2,horizontal: 4),
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 2, horizontal: 4),
                             child: Text(
                               '${String.fromCharCode(0x2022)}  ${does[index]}',
                               style: GoogleFonts.aleo(color: Colors.deepPurple),
@@ -168,7 +210,6 @@ class _RemindersState extends State<Reminders> {
                       );
                     }),
               )),
-         
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 20),
             child: Container(
@@ -179,15 +220,15 @@ class _RemindersState extends State<Reminders> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Center(
-                child: Text(
-              'Remembering the remedies and doing them on time is hard?\nNot to worry, Dorona got you covered!',
-              textAlign: TextAlign.justify,
-              style: GoogleFonts.aleo(
-                color: Colors.green,
-                fontWeight: FontWeight.w700,
-                fontSize: 13,
-              ),
-            )),
+                        child: Text(
+                      'Remembering the remedies and doing them on time is hard?\nNot to worry, Dorona got you covered!',
+                      textAlign: TextAlign.justify,
+                      style: GoogleFonts.aleo(
+                        color: Colors.green,
+                        fontWeight: FontWeight.w700,
+                        fontSize: 13,
+                      ),
+                    )),
                     GestureDetector(
                       onTap: () {},
                       child: Container(
@@ -195,17 +236,22 @@ class _RemindersState extends State<Reminders> {
                         width: 100,
                         decoration: BoxDecoration(
                             color: Colors.green, shape: BoxShape.circle),
-                        child: Icon(Icons.table_view,color: Colors.white,),
+                        child: Icon(
+                          Icons.table_view,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
                     Center(
-                    child: Text('Make a time table and we will remind you',style: subtitleText,))
+                        child: Text(
+                      'Make a time table and we will remind you',
+                      style: subtitleText,
+                    ))
                   ],
                 ),
               ),
             ),
           ),
-  
         ],
       ),
     );
