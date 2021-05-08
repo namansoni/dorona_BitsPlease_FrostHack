@@ -31,14 +31,16 @@ exports.onLocationCreate = functions
         querySnapshot.forEach(doc => {
             if (doc.exists) {
                 if (doc.id != userId) {
-                    const point2 = {
-                        lat: doc.data()['latitude'],
-                        lng: doc.data()['longitude'],
-                    };
-                    const result = distanceBetweenPoints(point1, point2, "m");
-                    console.log(result);
-                    if (result['distance'] <= 20) {
-                        count = count + 1;
+                    if (doc.data()['status'] == 'positive') {
+                        const point2 = {
+                            lat: doc.data()['latitude'],
+                            lng: doc.data()['longitude'],
+                        };
+                        const result = distanceBetweenPoints(point1, point2, "m");
+                        console.log(result);
+                        if (result['distance'] <= 50) {
+                            count = count + 1;
+                        }
                     }
                 }
             }
@@ -101,15 +103,18 @@ exports.onLocationUpdate = functions
         querySnapshot.forEach(doc => {
             if (doc.exists) {
                 if (doc.id != userId) {
-                    const point2 = {
-                        lat: doc.data()['latitude'],
-                        lng: doc.data()['longitude'],
-                    };
-                    const result = distanceBetweenPoints(point1, point2, "m");
-                    console.log(result);
-                    if (result['distance'] <= 50) {
-                        count = count + 1;
+                    if (doc.data()['status'] == 'positive') {
+                        const point2 = {
+                            lat: doc.data()['latitude'],
+                            lng: doc.data()['longitude'],
+                        };
+                        const result = distanceBetweenPoints(point1, point2, "m");
+                        console.log(result);
+                        if (result['distance'] <= 50) {
+                            count = count + 1;
+                        }
                     }
+
                 }
             }
         });

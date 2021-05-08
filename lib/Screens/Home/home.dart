@@ -3,6 +3,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dorona_frost/Providers/bottomBarProvider.dart';
 import 'package:dorona_frost/Providers/floatingActionButtonProvider.dart';
 import 'package:dorona_frost/Providers/userProvider.dart';
+import 'package:dorona_frost/Screens/Home/covid_updates.dart';
+import 'package:dorona_frost/Screens/ShowQR/showQR.dart';
 import 'package:dorona_frost/Screens/survey.dart';
 import 'package:dorona_frost/styles.dart';
 
@@ -17,7 +19,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../../my_custom_icons.dart';
 import 'mainHome.dart';
 import '../../colors1.dart';
-import 'covidUpdates.dart';
+import 'covid_updates.dart';
 import 'package:dorona_frost/Screens/Drawer/drawer.dart';
 
 class Home extends StatefulWidget {
@@ -28,7 +30,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  int _selectedIndex = 1;
+  int _selectedIndex = 0;
   bool showFloating = false;
   @override
   void initState() {
@@ -54,11 +56,12 @@ class _HomeState extends State<Home> {
     createAndroidNotificationToken();
     super.initState();
   }
+
   void callChannels() async {
     MethodChannel channel = MethodChannel("Location");
     await channel.invokeMethod('startLocation', {'userId': widget.user.uid});
-
   }
+
   @override
   Widget build(BuildContext context) {
     final userProvider = Provider.of<UserProvider>(context);
@@ -79,13 +82,21 @@ class _HomeState extends State<Home> {
         iconTheme: IconThemeData(
           color: blueColor,
         ),
-        actions: [],
+        actions: [
+          IconButton(
+            icon: Icon(MyCustomIcons.qrcode),
+            onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => ShowQr(),
+              ));
+            },
+          )
+        ],
       ),
       body: _selectedIndex == 0
           ? MainHome()
           : _selectedIndex == 1
-              ? CovidUpdates()
-              : SurveyNew(),
+              ? CovidUpdates():Column(),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(color: Colors.white, boxShadow: [
           BoxShadow(blurRadius: 20, color: Colors.black.withOpacity(.1))

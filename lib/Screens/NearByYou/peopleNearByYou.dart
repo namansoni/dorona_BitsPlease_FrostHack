@@ -94,7 +94,7 @@ class _PeopleNearByYouState extends State<PeopleNearByYou> {
                       latitude,
                       longitude,
                     ),
-                    zoom: 15,
+                    zoom: 20,
                   ),
                   mapType: MapType.normal,
                   markers: markers,
