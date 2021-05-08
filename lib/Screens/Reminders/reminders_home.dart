@@ -1,5 +1,6 @@
 import 'package:dorona_frost/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -160,7 +161,8 @@ class _RemindersState extends State<Reminders> {
                 CircleAvatar(
                     backgroundColor: Colors.white,
                     radius: 40,
-                    child: SvgPicture.asset('assets/images/coconut-oil-skin-svgrepo-com.svg')),
+                    child: SvgPicture.asset(
+                        'assets/images/coconut-oil-skin-svgrepo-com.svg')),
                 CircleAvatar(
                     backgroundColor: Colors.white,
                     radius: 40,
@@ -230,7 +232,8 @@ class _RemindersState extends State<Reminders> {
                       ),
                     )),
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                      },
                       child: Container(
                         height: 100,
                         width: 100,

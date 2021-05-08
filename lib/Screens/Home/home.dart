@@ -3,6 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dorona_frost/Providers/bottomBarProvider.dart';
 import 'package:dorona_frost/Providers/floatingActionButtonProvider.dart';
 import 'package:dorona_frost/Providers/userProvider.dart';
+import 'package:dorona_frost/Screens/survey.dart';
 import 'package:dorona_frost/styles.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
@@ -84,7 +85,7 @@ class _HomeState extends State<Home> {
           ? MainHome()
           : _selectedIndex == 1
               ? CovidUpdates()
-              : Column(),
+              : SurveyNew(),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(color: Colors.white, boxShadow: [
           BoxShadow(blurRadius: 20, color: Colors.black.withOpacity(.1))
@@ -107,6 +108,10 @@ class _HomeState extends State<Home> {
                   GButton(
                     icon: Icons.update,
                     text: 'Covid Updates',
+                  ),
+                  GButton(
+                    icon: Icons.person,
+                    text: 'Survey',
                   ),
                 ],
                 selectedIndex: _selectedIndex,
