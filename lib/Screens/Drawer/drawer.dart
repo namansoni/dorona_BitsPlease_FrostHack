@@ -1,4 +1,5 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
+import 'package:dorona_frost/Screens/Reminders/reminders_home.dart';
 import 'package:dorona_frost/Screens/xRayTest/xRayTestHome.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
@@ -99,8 +100,8 @@ class _CustomDrawerState extends State<CustomDrawer> {
                     dialogType: DialogType.INFO,
                     title: "Do you really want to signout?",
                     desc: "",
-                    btnOk: RaisedButton(
-                      color: greenColor,
+                    btnOk: ElevatedButton(
+                     // color: greenColor,
                       onPressed: () {
                         Navigator.of(widget.homecontext).pop();
                         FirebaseAuth auth = FirebaseAuth.instance;
@@ -111,8 +112,8 @@ class _CustomDrawerState extends State<CustomDrawer> {
                         style: buttonText,
                       ),
                     ),
-                    btnCancel: RaisedButton(
-                      color: redColor,
+                    btnCancel: ElevatedButton(
+                      //color: redColor,
                       onPressed: () {
                         Navigator.of(widget.homecontext).pop();
                       },
@@ -128,9 +129,9 @@ class _CustomDrawerState extends State<CustomDrawer> {
                 color: iconColor,
               ),
               ListTile(
-                onTap: () {},
+                onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context)=>Reminders()));},
                 title: Text(
-                  "Privacy Policy",
+                  "Reminders",
                   style: simpleTextDrawer,
                 ),
               ),

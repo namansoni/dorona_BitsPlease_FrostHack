@@ -59,8 +59,12 @@ dependencies:
   image: ^2.1.19
   dio:
   connectivity:
+  flutter_staggered_animations:
   percent_indicator:
   permission_handler:
+  flutter_local_notifications: 
+
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
