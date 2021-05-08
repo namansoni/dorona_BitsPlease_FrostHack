@@ -1,6 +1,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dorona_frost/Providers/userProvider.dart';
+import 'package:dorona_frost/Screens/NearByYou/peopleNearByYou.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -48,9 +49,7 @@ class _MainHomeState extends State<MainHome> {
                 }
                 return FadeIn(
                   child: Container(
-                    // color: snapshot.data['status'] == 'negative'
-                    //     ? greenColor
-                    //     : Colors.red,
+                    
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         gradient: LinearGradient(colors: [
@@ -79,10 +78,10 @@ class _MainHomeState extends State<MainHome> {
                       ),
                       subtitle: InkWell(
                         onTap: () {
-                          // Navigator.of(context)
-                          //     .push(MaterialPageRoute(builder: (context) {
-                          //   return PeopleNearByYou(userProvider.user.uid);
-                          // }));
+                          Navigator.of(context)
+                              .push(MaterialPageRoute(builder: (context) {
+                            return PeopleNearByYou(userProvider.user.uid);
+                          }));
                         },
                         child: Container(
                           height: 50,

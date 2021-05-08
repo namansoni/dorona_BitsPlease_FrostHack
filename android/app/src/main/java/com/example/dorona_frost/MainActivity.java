@@ -1,11 +1,19 @@
 package com.example.dorona_frost;
 
 import android.content.Intent;
+import android.location.Address;
+import android.location.Geocoder;
 import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
 
 import io.flutter.embedding.android.FlutterActivity;
 import io.flutter.embedding.engine.FlutterEngine;
@@ -39,6 +47,27 @@ public class MainActivity extends FlutterActivity {
                             startService(intent);
                         }
                     }
+                      if (call.method.equals("getAddressFromCoordinates")) {
+                                    double latitude = Double.valueOf(call.argument("latitude"));
+                                    double longitude = Double.valueOf(call.argument("longitude"));
+                                    Map address = new HashMap();
+                                    Geocoder geocoder;
+                                    geocoder = new Geocoder(this, Locale.getDefault());
+                                    List<Address> addresses;
+                                    try {
+                                        addresses = geocoder.getFromLocation(latitude, longitude, 1);
+                                        System.out.println(addresses.get(0).getLocality());
+                                        System.out.println(addresses.get(0).getPostalCode());
+                                        address.put("adminArea", addresses.get(0).getAdminArea().toString());
+                                        address.put("subAdminArea", addresses.get(0).getSubAdminArea().toString());
+                                        address.put("pincode", addresses.get(0).getPostalCode().toString());
+                                        result.success(address);
+
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                    }
+
+                                }
                 });
     }
 }
