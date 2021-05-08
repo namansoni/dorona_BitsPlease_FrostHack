@@ -1,16 +1,53 @@
-# dorona_frost
+# Dorona
 
-A new Flutter project.
+Android Application for Health Workers and citizens during COVID-19 pandemic
 
-## Getting Started
+## How to run the project
+Step 1: Install [Flutter](https://flutter.dev/docs/get-started/install).
+ 
+Step 2: Go to the android/app folder and replace the `google-services.json` file with your `google-services.json` file.
 
-This project is a starting point for a Flutter application.
+Then, run the following command in cmd from your project directory
 
-A few resources to get you started if this is your first Flutter project:
+```bash
+flutter run
+```
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Dependencies Used
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```
+  cupertino_icons: 
+  splashscreen: 
+  google_fonts: 
+  firebase_auth: 
+  firebase_core:
+  animate_do: 
+  provider: 
+  flushbar:
+  google_nav_bar: 
+  google_maps_flutter: 
+  geolocator: 
+  cloud_firestore: 
+  http: 
+  fl_chart: 
+  url_launcher:
+  qr_flutter: 
+  qrscan: 
+  awesome_dialog: 
+  location: 
+  flutter_svg: 
+  firebase_messaging: 
+  shared_preferences: 
+  timeago: 
+  tflite: 
+  image_picker: 
+  image: 
+  dio:
+  connectivity:
+  percent_indicator:
+  permission_handler:
+```
+
+## Credits
+1. How to start [foreground service](https://codinginflow.com/tutorials/android/foreground-service)
+2. Get current location using [FusedLocationProvider](https://www.youtube.com/watch?v=4_RK_5bCoOY)

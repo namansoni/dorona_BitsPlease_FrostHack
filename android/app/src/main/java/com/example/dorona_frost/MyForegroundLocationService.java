@@ -34,10 +34,10 @@ public class MyForegroundLocationService extends Service {
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "147")
                 .setContentTitle("Dorona Tracker")
-                .setSmallIcon(R.mipmap.ic_launcher)
+                .setSmallIcon(R.drawable.ic_notification)
                 .setColor(Color.rgb(128, 131, 224))
                 .setCategory(NotificationCompat.CATEGORY_MESSAGE)
-                .setLargeIcon(BitmapFactory.decodeResource(this.getResources(),R.mipmap.ic_launcher))
+                .setLargeIcon(BitmapFactory.decodeResource(this.getResources(),R.mipmap.safe))
                 .setStyle(new NotificationCompat.BigTextStyle()
                         .bigText("Dorona tracks you continuosly, to keep you safe"))
                 .setPriority(NotificationCompat.PRIORITY_HIGH);

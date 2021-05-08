@@ -2,6 +2,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dorona_frost/Providers/userProvider.dart';
 import 'package:dorona_frost/Screens/NearByYou/peopleNearByYou.dart';
+import 'package:dorona_frost/Screens/News/news.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -245,11 +246,11 @@ class _MainHomeState extends State<MainHome> {
             color: Color(0xFFF5F5F7),
             padding: EdgeInsets.only(top: 10, left: 10, bottom: 2),
             child: Text(
-              "Corona Updates",
+              "News",
               style: titleTextStyle,
             ),
           ),
-          //News()
+          News()
         ],
       ),
     );
