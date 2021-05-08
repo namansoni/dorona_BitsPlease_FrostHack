@@ -127,12 +127,14 @@ class _HomeState extends State<Home> {
     String messagingToken = await firebaseMessaging.getToken();
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     String token = sharedPreferences.getString("androidNotificationToken");
+    print(token);
     if (token == null || token == "") {
       await sharedPreferences.setString(
           "androidNotificationToken", messagingToken);
       FirebaseFirestore.instance.collection("Users").doc(widget.user.uid).set(
           {'androidNotificationToken': messagingToken},
           SetOptions(merge: true));
+      print(messagingToken);
     }
     if (token != null && token != "" && token != messagingToken) {
       await sharedPreferences.setString(
@@ -140,6 +142,7 @@ class _HomeState extends State<Home> {
       FirebaseFirestore.instance.collection("Users").doc(widget.user.uid).set(
           {'androidNotificationToken': messagingToken},
           SetOptions(merge: true));
+      print(messagingToken);
     }
   }
 }
