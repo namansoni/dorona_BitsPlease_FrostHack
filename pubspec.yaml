@@ -61,6 +61,8 @@ dependencies:
   connectivity:
   flutter_staggered_animations:
   percent_indicator:
+  flutter_local_notifications: 
+
 
 dev_dependencies:
   flutter_test:
