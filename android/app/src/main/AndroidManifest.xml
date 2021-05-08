@@ -16,7 +16,7 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="dorona_frost"
+        android:label="Dorona"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
