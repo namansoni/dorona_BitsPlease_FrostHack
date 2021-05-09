@@ -51,3 +51,5 @@ flutter run
 ## Credits
 1. How to start [foreground service](https://codinginflow.com/tutorials/android/foreground-service)
 2. Get current location using [FusedLocationProvider](https://www.youtube.com/watch?v=4_RK_5bCoOY)
+3. [Covid X-Ray Dataset](https://www.kaggle.com/tawsifurrahman/covid19-radiography-database)
+4. How to call [Python Script from Nodejs](https://www.youtube.com/watch?v=aoMzOgiE7rY)
